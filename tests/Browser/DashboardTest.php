@@ -19,10 +19,10 @@ class DashboardTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->visit('/dashboard')
                 ->maximize()
-                ->assertSee("Login") // Assuming you have a login button with the text "Login"
+                ->assertSee("Login") 
                 ->type('email', '1t.aamer@gmail.com')
                 ->type('password', '!Test123*')
-                ->press('Login') // Assuming the login button has the name or value "Login"
+                ->press('Login') 
                 ->assertSee("Welcome back, Taimur Aamer!")
                 ->assertSee("Published")
                 ->assertSee("STATUS")
@@ -31,8 +31,10 @@ class DashboardTest extends DuskTestCase
                 ->assertSee("Scheduled")
                 ->assertSee("Pending Editing")
                 ->assertSee("Total Posts Worked")
-                // ->select('#select2-change_team-container')
-                // ->click('[id="select2-change_team-result-na1x-personal"]')
+                ->select('dashboard-dropdown1', 'personal')
+                ->assertSelected('dashboard-dropdown1', 'personal')
+
+
                 ->pause(5000); 
         });
     }
