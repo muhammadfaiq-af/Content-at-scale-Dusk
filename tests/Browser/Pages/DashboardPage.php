@@ -33,6 +33,7 @@ class LoginPage extends Page
             '@email' => 'input[id="email"]',
             '@password' => 'input[id="password"]',
             '@login-button' => 'button.submit[type="submit"]',
+            'dashboard-dropdown1' => '#change_team',
         ];
     }
 }

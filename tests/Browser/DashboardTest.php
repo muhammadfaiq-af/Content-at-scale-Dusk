@@ -31,8 +31,10 @@ class DashboardTest extends DuskTestCase
                 ->assertSee("Scheduled")
                 ->assertSee("Pending Editing")
                 ->assertSee("Total Posts Worked")
-                // ->select('#select2-change_team-container')
-                // ->click('[id="select2-change_team-result-na1x-personal"]')
+                ->select('dashboard-dropdown1', 'personal')
+                ->assertSelected('dashboard-dropdown1', 'personal')
+
+
                 ->pause(5000); 
         });
     }
