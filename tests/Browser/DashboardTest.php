@@ -19,10 +19,10 @@ class DashboardTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->visit('/dashboard')
                 ->maximize()
-                ->assertSee("Login") // Assuming you have a login button with the text "Login"
+                ->assertSee("Login") 
                 ->type('email', '1t.aamer@gmail.com')
                 ->type('password', '!Test123*')
-                ->press('Login') // Assuming the login button has the name or value "Login"
+                ->press('Login') 
                 ->assertSee("Welcome back, Taimur Aamer!")
                 ->assertSee("Published")
                 ->assertSee("STATUS")
